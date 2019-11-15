@@ -9,9 +9,7 @@
 import axios from 'axios'
 import PostsList from './PostsList'
 import Vue from 'vue'
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-Vue.use(VueMaterial)
+
 
 export default {
   name: 'simple-pagination',

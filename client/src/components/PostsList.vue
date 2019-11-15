@@ -1,27 +1,27 @@
 <template>
   <div>
-    <table>
-      <tr>
-        <th>TITLE</th>
-        <th>AUTHOR</th>
-        <th>CONTENT</th>
-        <th>POSTSED_DATE</th>
-      </tr>
-      <tr v-for="p in paginatedData" :key="p.title">
-        <td>{{ p.title }}</td>
-        <td>{{ p.author }}</td>
-        <td>{{ p.content }}</td>
-        <td>{{ p.posted_date }}</td>
-      </tr>
-    </table>
+    <md-table>
+      <md-table-row>
+        <md-table-head>TITLE</md-table-head>
+        <md-table-head>AUTHOR</md-table-head>
+        <md-table-head>CONTENT</md-table-head>
+        <md-table-head>POSTSED_DATE</md-table-head>
+      </md-table-row>
+      <md-table-row v-for="p in paginatedData" :key="p.title">
+        <md-table-cell>{{ p.title }}</md-table-cell>
+        <md-table-cell>{{ p.author }}</md-table-cell>
+        <md-table-cell>{{ p.content }}</md-table-cell>
+        <md-table-cell>{{ p.posted_date }}</md-table-cell>
+      </md-table-row>
+    </md-table>
     <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">
+      <md-button :disabled="pageNum === 0" @click="prevPage" class="md-raised">
         이전
-      </button>
+      </md-button>
       <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">
+      <md-button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="md-raised">
         다음
-      </button>
+      </md-button>
     </div>
   </div>
 </template>
@@ -75,36 +75,3 @@ export default {
 }
 </script>
 
-<style>
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-table th {
-  font-size: 1.2rem;
-}
-table tr {
-  height: 2rem;
-  text-align: center;
-  border-bottom: 1px solid #505050;
-}
-table tr:first-of-type {
-  border-top: 2px solid #404040;
-}
-table tr td {
-  padding: 1rem 0;
-  font-size: 1.1rem;
-}
-.btn-cover {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-.btn-cover .page-btn {
-  width: 5rem;
-  height: 2rem;
-  letter-spacing: 0.5px;
-}
-.btn-cover .page-count {
-  padding: 0 1rem;
-}
-</style>

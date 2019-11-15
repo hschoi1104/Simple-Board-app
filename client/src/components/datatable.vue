@@ -8,7 +8,10 @@
 </template>
 
 <script>
-  export default {
+import axios from 'axios'
+import Vue from 'vue'
+
+ export default {
     data () {
       return {
         headers: [
@@ -111,7 +114,9 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
+h1 {
+  color: #454545;
+  text-align: center;
+}
 </style>
